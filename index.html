@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRI AMMAN DECORATION | Premium Event Decorator in Perambalur</title>
+<meta name="description" content="SRI AMMAN DECORATION delivers luxury wedding and event decoration in Perambalur and across Tamil Nadu.">
+<style>
+:root{
+  --bg:#08060a;
+  --surface:rgba(255,255,255,0.08);
+  --surface-strong:rgba(255,255,255,0.12);
+  --gold:#d4af37;
+  --text:#f7f5f2;
+  --text-muted:#cdc5c0;
+  --shadow:0 30px 90px rgba(0,0,0,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:radial-gradient(circle at top,#1d1825,#08060a 48%);color:var(--text);line-height:1.65;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+button,a{font:inherit;}
+body.loading{overflow:hidden;}
+.loading-screen{position:fixed;inset:0;z-index:9999;background:#08060a;display:flex;justify-content:center;align-items:center;flex-direction:column;gap:20px;transition:opacity .4s ease;}
+.loading-screen[hidden]{opacity:0;visibility:hidden;pointer-events:none;}
+.loader-ring{width:80px;height:80px;border:6px solid rgba(212,175,55,.12);border-top-color:var(--gold);border-radius:50%;animation:spin 1.2s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.page-wrap{position:relative;z-index:1;}
+nav{position:fixed;inset:0 0 auto 0;z-index:1000;padding:22px 30px;display:flex;justify-content:space-between;align-items:center;gap:30px;backdrop-filter:blur(16px);background:rgba(8,6,10,.72);border-bottom:1px solid rgba(255,255,255,.08);}
+.brand{display:flex;align-items:center;gap:14px;font-size:1rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);}
+.brand::before{content:'';width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#fff0 0,#d4af37 100%);box-shadow:0 0 20px rgba(212,175,55,.35);}
+.nav-links{display:flex;gap:24px;flex-wrap:wrap;}
+.nav-links a{text-decoration:none;color:var(--text);font-size:.95rem;transition:color .25s ease;}
+.nav-links a:hover{color:var(--gold);}
+.hero{min-height:100vh;display:grid;place-items:center;padding:0 24px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(255,255,255,.06),transparent 35%),linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.68));pointer-events:none;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease;}
+.hero-bg.visible{opacity:1;}
+.hero-content{position:relative;max-width:1120px;width:100%;display:grid;grid-template-columns:minmax(0,1.05fr);gap:28px;align-items:center;padding:120px 0;}
+.hero-copy{position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(18px);border-radius:28px;padding:44px;box-shadow:var(--shadow);}
+.hero-copy small{text-transform:uppercase;color:var(--gold);letter-spacing:.3em;font-size:.78rem;}
+.hero-copy h1{font-size:clamp(3rem,5vw,5.2rem);line-height:1.02;margin:18px 0 14px;color:#fff;text-shadow:0 20px 45px rgba(0,0,0,.35);}
+.hero-copy p{font-size:1.05rem;color:var(--text-muted);margin-bottom:28px;max-width:620px;}
+.button-group{display:flex;flex-wrap:wrap;gap:16px;}
+.btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;border:1px solid transparent;text-decoration:none;font-weight:700;transition:transform .25s ease,background .25s ease,border-color .25s ease;}
+.btn-primary{background:linear-gradient(135deg,#d4af37,#f7e3b4);color:#111;}
+.btn-secondary{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.18);}
+.btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px);}
+.hero-meta{display:grid;grid-template-columns:repeat(3,minmax(120px,1fr));gap:14px;margin-top:28px;}
+.meta-card{padding:18px 20px;border:1px solid rgba(255,255,255,.12);border-radius:22px;background:rgba(255,255,255,.06);backdrop-filter:blur(16px);}
+.meta-card strong{display:block;font-size:1.25rem;color:#fff;}
+.meta-card span{display:block;margin-top:6px;color:var(--text-muted);font-size:.92rem;}
+.section{padding:100px 30px;position:relative;z-index:1;}
+.section:nth-child(even){background:radial-gradient(circle at top,rgba(255,255,255,.02),transparent 50%);}
+.section .section-title{max-width:780px;margin:0 auto 50px;text-align:center;}
+.section-heading{font-size:2.7rem;color:#fff;letter-spacing:-.03em;margin-bottom:12px;}
+.section-subtitle{color:var(--text-muted);font-size:1rem;line-height:1.8;}
+.content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;}
+.about-copy{display:grid;gap:22px;}
+.glass-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:28px;box-shadow:var(--shadow);padding:32px;}
+.glass-card h3{color:var(--gold);margin-bottom:16px;font-size:1.25rem;}
+.glass-card p{color:var(--text-muted);}
+.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.service-card{padding:28px;border-radius:28px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);box-shadow:0 25px 60px rgba(0,0,0,.22);transition:transform .3s ease,box-shadow .3s ease;}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 28px 75px rgba(0,0,0,.28);}
+.service-card h4{margin-bottom:12px;color:#fff;font-size:1.2rem;}
+.service-card p{color:var(--text-muted);}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.gallery-item{position:relative;overflow:hidden;border-radius:24px;cursor:pointer;box-shadow:0 25px 60px rgba(0,0,0,.22);transition:transform .3s ease;min-height:240px;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease;}
+.gallery-item::after{content:'View';position:absolute;inset:0;background:rgba(0,0,0,.38);opacity:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.05rem;backdrop-filter:blur(4px);transition:opacity .25s ease;}
+.gallery-item:hover img{transform:scale(1.08);}
+.gallery-item:hover::after{opacity:1;}
+.features-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
+.feature-card{padding:28px;border-radius:24px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);transition:transform .3s ease;box-shadow:0 25px 60px rgba(0,0,0,.18);}
+.feature-card:hover{transform:translateY(-6px);}
+.feature-card h4{font-size:1.15rem;color:#fff;margin-bottom:14px;}
+.feature-card p{color:var(--text-muted);}
+.testimonials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.testimonial-card{padding:32px;border-radius:30px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);box-shadow:0 25px 60px rgba(0,0,0,.16);position:relative;}
+.testimonial-card::before{content:'“';position:absolute;top:22px;left:22px;font-size:3rem;color:rgba(212,175,55,.18);}
+.testimonial-card p{color:var(--text-muted);margin-bottom:24px;position:relative;z-index:1;}
+.testimonial-card strong{display:block;color:#fff;}
+.contact-grid{display:grid;grid-template-columns:1.05fr minmax(300px,0.95fr);gap:32px;}
+.contact-panel{display:grid;gap:20px;}
+.contact-card{padding:20px;border-radius:22px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;gap:18px;align-items:flex-start;}
+.contact-card span{font-size:1.5rem;line-height:1;color:var(--gold);}
+.contact-card div strong{display:block;color:#fff;margin-bottom:8px;}
+.contact-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:30px;padding:32px;box-shadow:var(--shadow);}
+.contact-form label{display:block;font-size:.95rem;margin-bottom:8px;color:var(--text-muted);}
+.contact-form input,.contact-form textarea{width:100%;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.04);color:#fff;padding:14px 16px;resize:none;outline:none;transition:border-color .25s;}
+.contact-form input:focus,.contact-form textarea:focus{border-color:rgba(212,175,55,.65);}
+.contact-form button{margin-top:18px;width:100%;padding:16px;border:none;border-radius:999px;background:linear-gradient(135deg,#d4af37,#f7e3b4);color:#111;font-weight:800;cursor:pointer;transition:transform .25s;}
+.contact-form button:hover{transform:translateY(-2px);}
+.footer{padding:36px 30px 18px;background:rgba(8,6,10,.95);border-top:1px solid rgba(255,255,255,.08);}
+.footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:center;}
+.footer-text{max-width:520px;}
+.footer-text h3{font-size:1.2rem;margin-bottom:12px;color:var(--gold);}
+.footer-text p{color:var(--text-muted);}
+.footer-links{display:flex;gap:18px;align-items:center;}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:.95rem;transition:color .25s;}
+.footer-links a:hover{color:var(--gold);}
+.bottom-bar{margin-top:30px;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;text-align:center;color:var(--text-muted);font-size:.95rem;}
+.floating-actions{position:fixed;bottom:22px;right:22px;display:grid;gap:14px;z-index:999;}
+.floating-actions a{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:rgba(212,175,55,.9);color:#111;text-decoration:none;box-shadow:0 20px 40px rgba(0,0,0,.3);transition:transform .2s ease,box-shadow .2s;}
+.floating-actions a:hover{transform:translateY(-3px);box-shadow:0 24px 45px rgba(0,0,0,.4);}
+.scroll-top{position:fixed;right:22px;bottom:110px;width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.08);color:var(--text);border:1px solid rgba(255,255,255,.14);display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(14px);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s;}
+.scroll-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.lightbox{position:fixed;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);padding:24px;opacity:0;visibility:hidden;transition:opacity .25s;}
+.lightbox.active{opacity:1;visibility:visible;}
+.lightbox-content{position:relative;max-width:1200px;width:100%;max-height:90vh;}
+.lightbox-content img{width:100%;height:auto;border-radius:24px;box-shadow:0 40px 120px rgba(0,0,0,.5);}
+.lightbox-close{position:absolute;top:-14px;right:-14px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);color:#fff;font-size:1.5rem;border:1px solid rgba(255,255,255,.16);cursor:pointer;}
+@media(max-width:1024px){.content-grid,.services-grid,.gallery-grid,.features-grid,.testimonials,.contact-grid{grid-template-columns:1fr;}.hero-meta{grid-template-columns:repeat(2,minmax(0,1fr));}.hero-content{padding-top:80px;}.nav-links{gap:16px;}}
+@media(max-width:720px){nav{padding:18px 18px;} .hero-copy{padding:30px;} .hero-meta{grid-template-columns:1fr;} .section{padding:80px 18px;} .floating-actions{right:14px;bottom:18px;} .scroll-top{right:14px;bottom:92px;} .gallery-item{min-height:240px;}}
+</style>
+</head>
+<body class="loading">
+<div class="loading-screen" id="loadingScreen">
+  <div class="loader-ring"></div>
+  <div style="color:var(--text-muted);text-transform:uppercase;letter-spacing:.18em;font-size:.91rem;">Preparing your celebration showcase</div>
+</div>
+<div class="page-wrap">
+<nav>
+  <a class="brand" href="#home">SRI AMMAN DECORATION</a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<section class="hero" id="home">
+  
+  <div class="hero-content">
+    <div class="hero-copy">
+      <small>Premium Event Decoration</small>
+      <h1>Turning Every Celebration Into a Beautiful Memory</h1>
+      <p>SRI AMMAN DECORATION delivers luxurious wedding, reception, engagement, baby shower and temple decoration across Perambalur and Tamil Nadu with premium themes, gold finishes, and custom designs.</p>
+      <div class="button-group">
+        <a href="#contact" class="btn-primary">Book Now</a>
+        <a href="https://wa.me/9943361077" target="_blank" class="btn-secondary">WhatsApp Us</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-card"><strong>Perambalur</strong><span>Local Event Setup</span></div>
+        <div class="meta-card"><strong>24+ Years</strong><span>Decoration Experience</span></div>
+        <div class="meta-card"><strong>Custom Themes</strong><span>Tailored Event Styling</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="about">
+  <div class="section-title">
+    <h2 class="section-heading">About SRI AMMAN DECORATION</h2>
+    <p class="section-subtitle">A trusted decoration partner in Perambalur, delivering premium designs, attentive service and unforgettable event styling for weddings, receptions and celebrations.</p>
+  </div>
+  <div class="content-grid">
+    <div class="about-copy">
+      <div class="glass-card">
+        <h3>Professional Event Decoration</h3>
+        <p>SRI AMMAN DECORATION provides professional event decoration services backed by years of experience and a passion for excellence. Our team crafts elegant, picture-perfect settings for every celebration.</p>
+      </div>
+      <div class="glass-card">
+        <h3>Custom Designs & Customer Satisfaction</h3>
+        <p>We specialize in customized designs that reflect your vision, budget and event theme. Every project is executed with attention to detail, timely setup and a focus on complete customer satisfaction.</p>
+      </div>
+    </div>
+    <div class="glass-card">
+      <h3>Decor That Leaves a Lasting Impression</h3>
+      <p>From flower installations and stage design to temple décor and reception ambience, we combine luxury finishes, rich textures and glowing lighting to create memorable celebrations.</p>
+    </div>
+  </div>
+</section>
+<section class="section" id="services">
+  <div class="section-title">
+    <h2 class="section-heading">Our Decoration Services</h2>
+    <p class="section-subtitle">Beautiful event décor for weddings, birthdays, receptions and customized themes with premium styling and flawless execution.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><h4>Wedding Decoration</h4><p>Elegant arches, floral stages and luxurious venue styling for your big day.</p></div>
+    <div class="service-card"><h4>Reception Decoration</h4><p>Grand reception styling with ambient lighting, tablescapes and premium backdrops.</p></div>
+    <div class="service-card"><h4>Engagement Decoration</h4><p>Romantic engagement setups designed to celebrate your new chapter in style.</p></div>
+    <div class="service-card"><h4>Baby Shower Decoration</h4><p>Charming décor themes with soft florals, balloons and curated details.</p></div>
+    <div class="service-card"><h4>Birthday Decoration</h4><p>Happy birthday experiences with vibrant themes, stage styling and personalized touches.</p></div>
+    <div class="service-card"><h4>Stage Decoration</h4><p>Premium stage designs with thematic props, blooms and exquisite lighting.</p></div>
+    <div class="service-card"><h4>Flower Decoration</h4><p>Fresh floral arrangements, floral walls and luxury centerpieces for every event.</p></div>
+    <div class="service-card"><h4>Temple Decoration</h4><p>Traditional and elegant temple décor for poojas, festivals and ceremonies.</p></div>
+    <div class="service-card"><h4>Custom Theme Decoration</h4><p>Fully customized decoration themes created to match your event vision and guest experience.</p></div>
+  </div>
+</section>
+<section class="section" id="gallery">
+  <div class="section-title">
+    <h2 class="section-heading">Gallery</h2>
+    <p class="section-subtitle">Explore our portfolio of premium decoration work across ceremonies, celebrations and custom event themes.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" data-src="deco 2.jpg"><img src="deco 2.jpg" alt="Decoration gallery photo 1"></div>
+    <div class="gallery-item" data-src="deco 3.jpg"><img src="deco 3.jpg" alt="Decoration gallery photo 2"></div>
+    <div class="gallery-item" data-src="deco 5.jpg"><img src="deco 5.jpg" alt="Decoration gallery photo 3"></div>
+    <div class="gallery-item" data-src="deco 6.jpg"><img src="deco 6.jpg" alt="Decoration gallery photo 4"></div>
+    <div class="gallery-item" data-src="deco 10.jpg"><img src="deco 10.jpg" alt="Decoration gallery photo 5"></div>
+    <div class="gallery-item" data-src="deco 9.jpg"><img src="deco 9.jpg" alt="Decoration gallery photo 5"></div>
+</div>
+
+</section>
+<section class="section" id="why">
+  <div class="section-title">
+    <h2 class="section-heading">Why Choose Us</h2>
+    <p class="section-subtitle">A trusted decoration partner offering premium design, affordable value and dependable delivery every time.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card"><h4>Premium Designs</h4><p>Luxurious décor styling with gold accents and elegant finishes.</p></div>
+    <div class="feature-card"><h4>Affordable Pricing</h4><p>Competitive packages designed to fit every budget without compromise.</p></div>
+    <div class="feature-card"><h4>On-Time Setup</h4><p>Reliable event installation and timely service for peace of mind.</p></div>
+    <div class="feature-card"><h4>Experienced Team</h4><p>Skilled decorators with years of experience in event styling.</p></div>
+    <div class="feature-card"><h4>Custom Decoration</h4><p>Tailored themes and bespoke décor to match your celebration.</p></div>
+    <div class="feature-card"><h4>Customer Satisfaction</h4><p>Focused on creating joyful events and happy clients.</p></div>
+  </div>
+</section>
+<section class="section" id="reviews">
+  <div class="section-title">
+    <h2 class="section-heading">Customer Reviews</h2>
+    <p class="section-subtitle">What our clients say about our decoration services and event delivery.</p>
+  </div>
+  <div class="testimonials">
+    <div class="testimonial-card"><p>The team created a stunning wedding setup with perfect lighting and floral details. Their attention to detail made our day unforgettable.</p><strong>- Priya, Perambalur</strong></div>
+    <div class="testimonial-card"><p>Very professional and creative. They delivered on time and transformed the reception space beautifully.</p><strong>- Arjun, Tamil Nadu</strong></div>
+    <div class="testimonial-card"><p>Lovely decoration for our baby shower. The custom theme and flower arrangements were simply amazing.</p><strong>- Meena, Perambalur</strong></div>
+  </div>
+</section>
+<section class="section" id="contact">
+  <div class="section-title">
+    <h2 class="section-heading">Contact & Booking</h2>
+    <p class="section-subtitle">Reach out today to book your event decoration in Perambalur and across Tamil Nadu.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-panel">
+      <div class="contact-card"><span>📍</span><div><strong>Location</strong><p>Perambalur, Tamil Nadu</p></div></div>
+      <div class="contact-card"><span>📞</span><div><strong>Phone</strong><p>9943361077<br>9943361078</p></div></div>
+      <div class="contact-card"><span>💬</span><div><strong>WhatsApp</strong><p>9943361077<br>9943361078</p></div></div>
+      <div class="contact-card"><span>✉️</span><div><strong>Service Area</strong><p>Perambalur and Customized Decoration Available Across Tamil Nadu</p></div></div>
+    </div>
+    <form class="contact-form" onsubmit="sendBooking(event)">
+      <label for="visitor-name">Name</label>
+      <input id="visitor-name" type="text" placeholder="Your Name" required>
+      <label for="visitor-phone">Phone</label>
+      <input id="visitor-phone" type="tel" placeholder="Phone Number" required>
+      <label for="visitor-event">Event Type</label>
+      <input id="visitor-event" type="text" placeholder="Wedding, Reception, Baby Shower..." required>
+      <label for="visitor-message">Message</label>
+      <textarea id="visitor-message" rows="5" placeholder="Tell us about your event"></textarea>
+      <button type="submit">Send Booking Request</button>
+    </form>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-text">
+      <h3>SRI AMMAN DECORATION</h3>
+      <p>Luxury event decoration services in Perambalur with custom themes, premium staging and reliable setup.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://wa.me/9943361077" target="_blank">WhatsApp</a>
+      <a href="tel:9943361077">Call</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="bottom-bar">© 2026 SRI AMMAN DECORATION</div>
+</footer>
+<div class="floating-actions">
+  <a href="https://wa.me/9943361077" target="_blank" aria-label="WhatsApp">💬</a>
+  <a href="tel:9943361077" aria-label="Call Now">📞</a>
+</div>
+<button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" aria-label="Close image viewer">×</button>
+    <img src="" alt="Large gallery photo" id="lightboxImage">
+  </div>
+</div>
+</div>
+<script>
+const heroLayers=document.querySelectorAll('.hero-bg');
+let heroIndex=0;
+function rotateHero(){
+  heroLayers.forEach((el,index)=>el.classList.toggle('visible',index===heroIndex));
+  heroIndex=(heroIndex+1)%heroLayers.length;
+}
+setInterval(rotateHero,5200);
+const lightbox=document.getElementById('lightbox');
+const lightboxImage=document.getElementById('lightboxImage');
+const galleryItems=document.querySelectorAll('.gallery-item');
+galleryItems.forEach(item=>{
+  item.addEventListener('click',()=>{
+    lightboxImage.src=item.dataset.src;
+    lightbox.classList.add('active');
+  });
+});
+document.querySelector('.lightbox-close').addEventListener('click',()=>lightbox.classList.remove('active'));
+lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.classList.remove('active');});
+function sendBooking(event){
+  event.preventDefault();
+  const name=document.getElementById('visitor-name').value.trim();
+  const phone=document.getElementById('visitor-phone').value.trim();
+  const eventType=document.getElementById('visitor-event').value.trim();
+  const message=document.getElementById('visitor-message').value.trim();
+  if(!name||!phone||!eventType)return;
+  const text=`Hello Sri Amman Decoration,%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEvent: ${encodeURIComponent(eventType)}%0AMessage: ${encodeURIComponent(message)}`;
+  window.open(`https://wa.me/9943361077?text=${text}`, '_blank');
+}
+const scrollTopBtn=document.getElementById('scrollTopBtn');
+window.addEventListener('scroll',()=>scrollTopBtn.classList.toggle('show',window.scrollY>380));
+scrollTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+window.addEventListener('load',()=>{document.body.classList.remove('loading');document.getElementById('loadingScreen').hidden=true;});
+</script>
+</body>
+</html>
